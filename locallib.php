@@ -36,10 +36,10 @@ function local_powerprouserexport_cron($runhow = 'auto', $data = null) {
 function local_powerprouserexport_write_user_data($config, $runhow = 'auto', $data = null) {
   global $CFG, $DB;
 
-  if (empty($config->csvlocation)) {
+  if (empty($config->usercsvlocation)) {
       $config->usercsvlocation = $CFG->dataroot.'/powerprouserexport';
   }
-  if (!isset($config->csvprefix)) {
+  if (!isset($config->usercsvprefix)) {
       $config->usercsvprefix = '';
   }
   if (!isset($config->lastrun)) {
@@ -54,7 +54,7 @@ function local_powerprouserexport_write_user_data($config, $runhow = 'auto', $da
   } else {
     $filename = $config->usercsvlocation.'/'.$config->usercsvprefix.date("Ymd").'.csv';
   }
-echo $filename;
+
   if ($fh = fopen($filename, 'w')) {
 
       // Write the headers first.
