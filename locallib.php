@@ -84,17 +84,17 @@ function local_powerprouserexport_write_user_data($config, $runhow = 'auto', $da
                       $user->firstname,
                       $user->lastname,
                       $user->country,
-                      $user->profile['dob'],
+                      $user->profile['DOB'],
                       $user->profile['streetnumber'],
                       $user->profile['streetname'],
-                      $user->profile['town'],
+                      $user->profile['addresslocation'],
                       $user->profile['postcode'],
                       $user->profile['state'],
                       $user->profile['gender'],
-                      $user->profile['postaladdress'],
+                      $user->profile['postaldetails'],
                       $employer,
-                      $user->profile['usi'],
-                      $user->profile['phone'])
+                      $user->profile['UniqueStudentID'],
+                      $user->profile['Phonenumber'])
                )."\r\n");
           }
 
